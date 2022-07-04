@@ -14,7 +14,7 @@ public class Solution
         for (int i = 0; i < nums.Length; i++)
         {
             int temp = target - nums[i];
-            if (dir.ContainsKey(temp) && dir[temp] != i)
+            if (dir.ContainsKey(temp))
             {
                 res = new int[2] { dir[temp], i };
                 return res;

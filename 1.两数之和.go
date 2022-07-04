@@ -13,7 +13,7 @@ func twoSum(nums []int, target int) []int {
 	var numsMap = make(map[int]int)
 	for i, v := range nums {
 		temp := target - v
-		if index, ok := numsMap[temp]; ok && index != i {
+		if index, ok := numsMap[temp]; ok {
 			return []int{index, i}
 		} else {
 			numsMap[v] = i
