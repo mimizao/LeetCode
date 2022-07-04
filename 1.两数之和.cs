@@ -1,4 +1,3 @@
-using System.IO;
 /*
  * @lc app=leetcode.cn id=1 lang=csharp
  *
