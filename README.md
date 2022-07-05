@@ -75,3 +75,36 @@ func min(x, y int) int {
 	return y
 }
 ```
+## 5.最长回文子串
+这题最开始也能想到把问题才小往大走，但是不知道原来这种做法叫做动态规划，这个有一个很重要的特点是会用空间换时间，也就是这里把最初的状态都记录下来：
+```go
+            var dp [1000][1000]bool
+            for i := range s {
+                dp[i][i] = true
+            }
+```
+
+以及后续的这里，可以看到状态都被记录下来了。
+
+```go
+			if s[left] != s[right] {
+				dp[left][right] = false
+			} else {
+				if right-left < 3 {
+					dp[left][right] = true
+				} else {
+					dp[left][right] = dp[left+1][right-1]
+				}
+			}
+```
+
+然后就是才小往大依次走就可以了，需要注意的下的是go写多了，不会写C#了，放下C#的二维数组
+
+```c#
+        bool[,] dp = new bool[len, len];
+        for (int i = 0; i < len; i++)
+        {
+            dp[i,i] = true;
+        }
+```
+
