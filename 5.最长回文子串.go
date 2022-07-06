@@ -3,10 +3,9 @@
  *
  * [5] 最长回文子串
  */
-
-// @lc code=start
 package main
 
+// @lc code=start
 func longestPalindrome(s string) string {
 	len := len(s)
 	if len < 2 {
