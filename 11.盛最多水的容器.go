@@ -11,7 +11,7 @@ func maxArea(height []int) int {
 	var left int = 0
 	var right int = len(height) - 1
 	for {
-		tmpRes := (right - left) * min(height[left], height[right])
+		tmpRes := (right - left) * min11(height[left], height[right])
 		if tmpRes > res {
 			res = tmpRes
 		}
@@ -27,7 +27,8 @@ func maxArea(height []int) int {
 	return res
 }
 
-func min(x, y int) int {
+// 因为都在main包下，所以只能随便取个名字了
+func min11(x, y int) int {
 	if x <= y {
 		return x
 	}
