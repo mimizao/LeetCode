@@ -6,7 +6,7 @@
 package main
 
 // @lc code=start
-func intToRoman(num int) string {
+func intToRoman1(num int) string {
 	var res = ""
 	if num >= 1000 {
 		count := num / 1000
@@ -84,6 +84,26 @@ func intToRoman(num int) string {
 			tempStr = "IX"
 		}
 		res += tempStr
+	}
+	return res
+}
+
+// 贪心法
+func intToRoman(num int) string {
+	var res = ""
+	var romanStrs = []string{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"}
+	var romanNums = []int{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1}
+	var i = 0
+	for {
+		if num >= romanNums[i] {
+			res += romanStrs[i]
+			num -= romanNums[i]
+		} else {
+			i++
+		}
+		if i >= 13 {
+			break
+		}
 	}
 	return res
 }
