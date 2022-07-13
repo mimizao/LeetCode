@@ -9,8 +9,7 @@ impl Solution {
     pub fn int_to_roman(num: i32) -> String {
         let mut res = String::new();
         let roman_strs = vec![
-            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I",
-        ];
+            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
         let roman_nums = vec![1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
         let mut new_num = num;
         let mut i = 0;
