@@ -18,14 +18,14 @@ func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
 	res := make([][]int, 0)
 
-	for first := 0; first < n; first++ {
+	for first := 0; first < n-2; first++ {
 		if first > 0 && nums[first] == nums[first-1] {
 			continue
 		}
 		third := n - 1
 		target := -1 * nums[first]
 
-		for second := first + 1; second < n; second++ {
+		for second := first + 1; second < n-1; second++ {
 			if second > first+1 && nums[second] == nums[second-1] {
 				continue
 			}
