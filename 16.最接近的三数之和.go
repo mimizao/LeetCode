@@ -29,8 +29,14 @@ func threeSumClosest(nums []int, target int) int {
 			}
 			if target > nums[first]+nums[second]+nums[third] {
 				second++
+				for second < third && nums[second] == nums[second+1] {
+					second++
+				}
 			} else {
 				third--
+				for second < third && nums[third] == nums[third-1] {
+					third--
+				}
 			}
 		}
 	}
