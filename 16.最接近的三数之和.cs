@@ -28,6 +28,9 @@ public class Solution
             while (third > second)
             {
                 int newDifference = Math.Abs(nums[first] + nums[second] + nums[third] - target);
+                if (newDifference == 0){
+                    return nums[first] + nums[second] + nums[third];
+                }
                 if (newDifference < difference)
                 {
                     difference = newDifference;
