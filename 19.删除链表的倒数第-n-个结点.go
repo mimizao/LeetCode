@@ -7,11 +7,6 @@ package main
 
 import "fmt"
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -33,7 +28,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		return head.Next
 	}
 	currentListNode := head
-	for index := 0; index < listNodeLen-n; index++ {
+	for index := 0; index < listNodeLen-n-1; index++ {
 		currentListNode = currentListNode.Next
 		fmt.Println("i:,val:", index, currentListNode.Val)
 	}
