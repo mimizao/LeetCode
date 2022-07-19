@@ -5,8 +5,6 @@
  */
 package main
 
-import "fmt"
-
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -20,7 +18,6 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	for currentListNode := head; currentListNode.Next != nil; currentListNode = currentListNode.Next {
 		listNodeLen++
 	}
-	fmt.Println("listNodeLen: ", listNodeLen)
 	if listNodeLen < n {
 		return head
 	}
@@ -30,7 +27,6 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	currentListNode := head
 	for index := 0; index < listNodeLen-n-1; index++ {
 		currentListNode = currentListNode.Next
-		fmt.Println("i:,val:", index, currentListNode.Val)
 	}
 	tempListNode := currentListNode.Next
 	currentListNode.Next = tempListNode.Next
