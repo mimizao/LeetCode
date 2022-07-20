@@ -48,4 +48,28 @@ func isValid(s string) bool {
 	return numsStack[0] == 0
 }
 
+func isValidOfficalIdea(s string) bool {
+	n := len(s)
+	if n%2 != 0 {
+		return false
+	}
+	myMap := map[byte]byte{
+		'(': ')',
+		'{': '}',
+		'[': ']',
+	}
+	stack := []byte{}
+	for i := 0; i < n; i++ {
+		if myMap[s[i]] > 0 {
+			if len(stack) == 0 || stack[len(stack)-1] != myMap[s[i]] {
+				return false
+			}
+			stack = stack[:len(stack)-1]
+		} else {
+			stack = append(stack, s[i])
+		}
+	}
+	return len(stack) == 0
+}
+
 // @lc code=end
