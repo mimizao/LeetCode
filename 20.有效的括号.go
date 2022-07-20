@@ -11,28 +11,41 @@ func isValid(s string) bool {
 	if n%2 != 0 {
 		return false
 	}
-	var num1, num2, num3 = 0, 0, 0
+	var numsStack []int = make([]int, n)
+	var index int = 0
 	for i := 0; i < n; i++ {
 		switch s[i] {
 		case '(':
-			num1++
+			numsStack[index] = 1
+			index++
 		case ')':
-			num1--
+			if index == 0 || numsStack[index-1] != 1 {
+				return false
+			}
+			numsStack[index-1] = 0
+			index--
 		case '[':
-			num2++
+			numsStack[index] = 2
+			index++
 		case ']':
-			num2--
+			if index == 0 || numsStack[index-1] != 2 {
+				return false
+			}
+			numsStack[index-1] = 0
+			index--
 		case '{':
-			num3++
+			numsStack[index] = 3
+			index++
 		case '}':
-			num3--
+			if index == 0 || numsStack[index-1] != 3 {
+				return false
+			}
+			numsStack[index-1] = 0
+			index--
 		default:
 		}
-		if num1 < 0 || num2 < 0 || num3 < 0 {
-			return false
-		}
 	}
-	return num1 == 0 && num2 == 0 && num3 == 0
+	return numsStack[0] == 0
 }
 
 // @lc code=end
