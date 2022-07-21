@@ -70,6 +70,7 @@ public class Solution
         return headListNode;
     }
 
+    // official function
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
         if (list1 == null)
