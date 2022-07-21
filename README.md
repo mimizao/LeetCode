@@ -242,3 +242,35 @@ fn is_valid(s: String) -> bool {
 }
 ```
 
+## 21.合并两个有序链表
+
+自己的方法就是属于一直写，不够简洁，用递归的话确实就比较简单。另外Rust抄了一个别人的代码，看起来真的很好看。
+
+```rust
+impl Solution {
+    pub fn merge_two_lists(
+        list1: Option<Box<ListNode>>,
+        list2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
+        match (list1, list2) {
+            (Some(n1), Some(n2)) => {
+                if n1.val <= n2.val {
+                    Some(Box::new(ListNode {
+                        val: n1.val,
+                        next: Solution::merge_two_lists(n1.next, Some(n2)),
+                    }))
+                } else {
+                    Some(Box::new(ListNode {
+                        val: n2.val,
+                        next: Solution::merge_two_lists(Some(n1), n2.next),
+                    }))
+                }
+            }
+            (Some(n1), None) => Some(n1),
+            (None, Some(n2)) => Some(n2),
+            _ => None,
+        }
+    }
+}
+```
+
