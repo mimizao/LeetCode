@@ -242,7 +242,7 @@ fn is_valid(s: String) -> bool {
 }
 ```
 
-## 21.合并两个有序链表
+##  21.合并两个有序链表
 
 自己的方法就是属于一直写，不够简洁，用递归的话确实就比较简单。另外Rust抄了一个别人的代码，看起来真的很好看。
 
@@ -271,6 +271,33 @@ impl Solution {
             _ => None,
         }
     }
+}
+```
+
+## 22.括号生成
+
+这题自己原本写的是`res = () + res || (res) || res + ()`，这样把这三个再拼成一个结果，然后再去重就行了，实际上自己是多么的愚蠢啊，这样会少一些情况，例如`res = (())()`，后面会有`res = (())()()`这种情况，就是插在了中间，所以就少考虑情况了。
+
+放下别人的**深度优先规划**的解法
+
+![](https://s2.loli.net/2022/07/22/1joCyiQz6WvB37L.png)
+
+```go
+func generateParenthesis(n int) []string {
+	var res []string
+	generate(&res, "", 0, 0, n)
+	return res
+}
+
+func generate(res *[]string, str string, leftCount, rightCount, n int) {
+	if leftCount > n || rightCount > n || rightCount > leftCount {
+		return
+	}
+	if leftCount == n && rightCount == n {
+		*res = append(*res, str)
+	}
+	generate(res, str+"(", leftCount+1, rightCount, n)
+	generate(res, str+")", leftCount, rightCount+1, n)
 }
 ```
 
