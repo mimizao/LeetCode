@@ -15,27 +15,18 @@ package main
  * }
  */
 func mergeKLists(lists []*ListNode) *ListNode {
-	if len(lists) == 0 {
+	return merge(lists, 0, len(lists)-1)
+}
+
+func merge(lists []*ListNode, left, right int) *ListNode {
+	if left == right {
+		return lists[left]
+	}
+	if left > right {
 		return nil
 	}
-	if len(lists) == 1 {
-		return lists[0]
-	}
-	var res *ListNode
-	var max = 10001
-	var index = 0
-	for i := 0; i < len(lists); i++ {
-		if lists[i] != nil && lists[i].Val < max {
-			index = i
-			max = lists[i].Val
-		}
-	}
-	res = lists[index]
-	if lists[index] != nil {
-		lists[index] = lists[index].Next
-		res.Next = mergeKLists(lists)
-	}
-	return res
+	mid := (left + right) / 2
+	return newMergeTwoLists(merge(lists, left, mid), merge(lists, mid+1, right))
 }
 
 // @lc code=end
@@ -63,4 +54,28 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 		list2.Next = newMergeTwoLists(list1, list2.Next)
 		return list2
 	}
+}
+
+func mergeKLists2(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+	if len(lists) == 1 {
+		return lists[0]
+	}
+	var res *ListNode
+	var max = 10001
+	var index = 0
+	for i := 0; i < len(lists); i++ {
+		if lists[i] != nil && lists[i].Val < max {
+			index = i
+			max = lists[i].Val
+		}
+	}
+	res = lists[index]
+	if lists[index] != nil {
+		lists[index] = lists[index].Next
+		res.Next = mergeKLists(lists)
+	}
+	return res
 }
