@@ -301,3 +301,47 @@ func generate(res *[]string, str string, leftCount, rightCount, n int) {
 }
 ```
 
+## 23.合并k个升序链表
+
+这题看到的第一时间就想到了第21题的两个有序链表，也确实可以那样做，就是两个两个合成，最终再返回就可以了。结果可以说是惨不忍睹，只击败了8%的兄弟。
+
+痛，太痛了，改，改成不是两个两个合并的，是所有的一块合并，结果还是只击败了13%的人，还是看看大佬的吧。
+
+看了下官方的题解，第一种其实和我的一样，就是挨个合成，说下第二种**分治合并**
+
+首先看下这个图，其实看下这个图就基本清楚了，其实就是在合并的时候不要再依次往后对比了，而是应该一直两个两个分，其实也就是二分的概念。
+
+![](https://s2.loli.net/2022/07/23/wrMB4ehPYJTCNEV.png)
+
+```go
+func mergeKLists(lists []*ListNode) *ListNode {
+	return merge(lists, 0, len(lists)-1)
+}
+
+func merge(lists []*ListNode, left, right int) *ListNode {
+	if left == right {
+		return lists[left]
+	}
+	if left > right {
+		return nil
+	}
+	mid := (left + right) / 2
+	return newMergeTwoLists(merge(lists, left, mid), merge(lists, mid+1, right))
+}
+
+func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	if list1 == nil {
+		return list2
+	} else if list2 == nil {
+		return list1
+	} else if list1.Val <= list2.Val {
+		list1.Next = newMergeTwoLists(list1.Next, list2)
+		return list1
+	} else {
+		list2.Next = newMergeTwoLists(list1, list2.Next)
+		return list2
+	}
+}
+```
+
+这里放下根据这种思想写的`go`代码
