@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 /*
  * @lc app=leetcode.cn id=23 lang=csharp
  *
@@ -18,15 +19,18 @@
  */
 public class Solution
 {
-    public ListNode MergeKLists1(ListNode[] lists)
+
+    public ListNode MergeKLists(ListNode[] lists)
     {
-        if (lists.Length == 0) return null;
-        ListNode res = lists[0];
-        for (int i = 1; i < lists.Length; i++)
-        {
-            res = MergeTwoLists(res, lists[i]);
-        }
-        return res;
+        return Merge(lists,0,lists.Length-1);
+    }
+
+    ListNode Merge(ListNode[] lists, int left, int right)
+    {
+        if (left == right) return lists[left];
+        if (left > right) return null;
+        int mid = (left + right) / 2;
+        return MergeTwoLists(Merge(lists,left,mid),Merge(lists,mid+1,right));
     }
 
     ListNode MergeTwoLists(ListNode list1, ListNode list2)
@@ -51,8 +55,18 @@ public class Solution
         }
     }
 
+    public ListNode MergeKLists1(ListNode[] lists)
+    {
+        if (lists.Length == 0) return null;
+        ListNode res = lists[0];
+        for (int i = 1; i < lists.Length; i++)
+        {
+            res = MergeTwoLists(res, lists[i]);
+        }
+        return res;
+    }
 
-    public ListNode MergeKLists(ListNode[] lists)
+    public ListNode MergeKLists2(ListNode[] lists)
     {
         if (lists.Length == 0) return null;
         if (lists.Length == 1) return lists[0];
@@ -71,7 +85,7 @@ public class Solution
         if (lists[index] != null)
         {
             lists[index] = lists[index].next;
-            res.next = MergeKLists(lists);
+            res.next = MergeKLists2(lists);
         }
         return res;
     }
