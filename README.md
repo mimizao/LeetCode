@@ -345,3 +345,7 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 ```
 
 这里放下根据这种思想写的`go`代码
+
+## 24.两两交换链表中的节点
+
+还行，也没有什么卡壳的地方，很平稳的做出来了，思路就不写了，估计下次还是能做出来。
