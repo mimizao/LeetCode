@@ -349,3 +349,25 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 ## 24.两两交换链表中的节点
 
 还行，也没有什么卡壳的地方，很平稳的做出来了，思路就不写了，估计下次还是能做出来。
+
+## 25.k-个一组翻转链表
+
+这题是一个困难题，不过自己也做出来，而且整体思路和官方题解的差别并不大，都是分为以下几步，先判断剩余的时候满足`k`，如果不满足的话就直接返回，如果满足的话就把剩余的翻转一下，其实自己写的问题就是翻转的过程写的太麻烦了，这里先放下官方的翻转过去，其中`head`和`tail`分别是首节点和尾节点：
+
+```c#
+    public ListNode[] MyReverse(ListNode head, ListNode tail)
+    {
+        ListNode prev = tail.next;
+        ListNode p = head;
+        while (prev != tail)
+        {
+            ListNode nex = p.next;
+            p.next = prev;
+            prev = p;
+            p=nex;
+        }
+        return new ListNode[]{tail,head};
+    }
+```
+
+关于这个算法，现在脑子已经有点晕了，先记录下，等会再去理解，先看书去了。
