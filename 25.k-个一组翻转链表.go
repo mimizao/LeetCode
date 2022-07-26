@@ -13,7 +13,7 @@ package main
  *     Next *ListNode
  * }
  */
-func reverseKGroup(head *ListNode, k int) *ListNode {
+func reverseKGroup1(head *ListNode, k int) *ListNode {
 	if k <= 1 {
 		return head
 	}
@@ -24,7 +24,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 		head = swapPairsInter(head, k-i)
 	}
 	theKthListNode := getKthListNode(head, k)
-	theKthListNode.Next = reverseKGroup(theKthListNode.Next, k)
+	theKthListNode.Next = reverseKGroup1(theKthListNode.Next, k)
 	return head
 }
 
