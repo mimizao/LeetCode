@@ -1,3 +1,4 @@
+using System;
 /*
  * @lc app=leetcode.cn id=26 lang=csharp
  *
@@ -45,6 +46,24 @@ public class Solution
             right++;
         }
         return res;
+    }
+    public int RemoveDuplicates1(int[] nums)
+    {
+        int len = nums.Length;
+        if (len <= 1)
+        {
+            return len;
+        }
+        int slow = 1;
+        for (int fast = 1; fast < len; fast++)
+        {
+            if (nums[fast] != nums[fast - 1])
+            {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+        }
+        return slow;
     }
 }
 // @lc code=end
