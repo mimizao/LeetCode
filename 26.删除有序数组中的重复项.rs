@@ -35,5 +35,21 @@ impl Solution {
         }
         res as i32
     }
+    pub fn remove_duplicates1(nums: &mut Vec<i32>) -> i32 {
+        let len = nums.len();
+        if len <= 1 {
+            return len as i32;
+        }
+        let mut slow = 1;
+        let mut fast = 1;
+        while fast < len {
+            if nums[fast] != nums[fast - 1] {
+                nums[slow] = nums[fast];
+                slow += 1;
+            }
+            fast += 1;
+        }
+        return slow as i32;
+    }
 }
 // @lc code=end
