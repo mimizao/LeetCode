@@ -43,4 +43,19 @@ func removeDuplicates(nums []int) int {
 	return res
 }
 
+func removeDuplicates1(nums []int) int {
+	len := len(nums)
+	if len <= 1 {
+		return len
+	}
+	slow := 1
+	for fast := 1; fast < len; fast++ {
+		if nums[fast] != nums[fast-1] {
+			nums[slow] = nums[fast]
+			slow++
+		}
+	}
+	return slow
+}
+
 // @lc code=end
