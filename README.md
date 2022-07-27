@@ -382,3 +382,24 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 **注意点二：**可以提前退出，如果`nums[left]==nums[len-1]`，就是说如果已经是满足条件的`nums`了，就可以提前返回结果了。
 
+这里再说下官方题解，确实比我的巧妙多了：
+
+```rust
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+        let len = nums.len();
+        if len <= 1 {
+            return len as i32;
+        }
+        let mut slow = 1; // slow是指下一次要更改值的坐标
+        let mut fast = 1; // fast是和前面不同的那个值，也就是将slow设置为fast
+        while fast < len {
+            if nums[fast] != nums[fast - 1] {
+                nums[slow] = nums[fast];
+                slow += 1;
+            }
+            fast += 1;
+        }
+        return slow as i32;
+    }
+```
+
