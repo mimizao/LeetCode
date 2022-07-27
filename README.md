@@ -1,3 +1,5 @@
+[toc]
+
 # LeetCode
 
 如果可以的话，就坚持下去吧
@@ -371,3 +373,12 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 ```
 
 关于这个算法，现在脑子已经有点晕了，先记录下，等会再去理解，先看书去了。
+
+## 26.删除有序数组中的重复项
+
+原本的做法是如果`nums[left]==nums[right]`，就去找下一个不相等的`nums[index]`，找到的话就把`ritht--index`都设置为`nums[index]`，后来想了一下，根本没有必要，只需要把`nums[right]`设置为`nums[index]`就可以了。
+
+**注意点一：**在设置了`nums[right]=nums[index]`之后需要注意不能再判断`nums[left]==nums[right]`了，因为有可能会出现`nums[left]>nums[right]`的情况，比如`nums = {1,1,1,2,3,4}`，在第一次判断之后就会变成`nums = {1,2,1,2,3,4}`，所以需要改变判断条件。
+
+**注意点二：**可以提前退出，如果`nums[left]==nums[len-1]`，就是说如果已经是满足条件的`nums`了，就可以提前返回结果了。
+
