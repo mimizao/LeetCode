@@ -21,7 +21,7 @@ public class Solution
         {
             if (nums[left] >= nums[right])
             {
-                if (nums[right] == nums[len - 1])
+                if (nums[len] == nums[len - 1])
                 {
                     System.Console.WriteLine(right);
                     return right;
