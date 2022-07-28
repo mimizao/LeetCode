@@ -20,7 +20,7 @@ func removeElement(nums []int, val int) int {
 	for i := 0; i < len; i++ {
 		if nums[i] == val {
 			count++
-			if nums[i] == nums[len-1] {
+			if nums[i] == nums[len-count] {
 				return i
 			}
 			if i < len-count {
