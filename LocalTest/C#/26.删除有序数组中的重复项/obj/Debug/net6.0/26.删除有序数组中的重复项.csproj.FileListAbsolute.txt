@@ -1,0 +1,15 @@
+E:\C#\LeetCode\26.删除有序数组中的重复项\bin\Debug\net6.0\26.删除有序数组中的重复项.exe
+E:\C#\LeetCode\26.删除有序数组中的重复项\bin\Debug\net6.0\26.删除有序数组中的重复项.deps.json
+E:\C#\LeetCode\26.删除有序数组中的重复项\bin\Debug\net6.0\26.删除有序数组中的重复项.runtimeconfig.json
+E:\C#\LeetCode\26.删除有序数组中的重复项\bin\Debug\net6.0\26.删除有序数组中的重复项.dll
+E:\C#\LeetCode\26.删除有序数组中的重复项\bin\Debug\net6.0\26.删除有序数组中的重复项.pdb
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.csproj.AssemblyReference.cache
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.AssemblyInfoInputs.cache
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.AssemblyInfo.cs
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.csproj.CoreCompileInputs.cache
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.dll
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\refint\26.删除有序数组中的重复项.dll
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.pdb
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\26.删除有序数组中的重复项.genruntimeconfig.cache
+E:\C#\LeetCode\26.删除有序数组中的重复项\obj\Debug\net6.0\ref\26.删除有序数组中的重复项.dll

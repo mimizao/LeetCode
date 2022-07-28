@@ -1,0 +1,15 @@
+E:\C#\LeetCode\15.三数之和\bin\Debug\net6.0\15.三数之和.exe
+E:\C#\LeetCode\15.三数之和\bin\Debug\net6.0\15.三数之和.deps.json
+E:\C#\LeetCode\15.三数之和\bin\Debug\net6.0\15.三数之和.runtimeconfig.json
+E:\C#\LeetCode\15.三数之和\bin\Debug\net6.0\15.三数之和.dll
+E:\C#\LeetCode\15.三数之和\bin\Debug\net6.0\15.三数之和.pdb
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.csproj.AssemblyReference.cache
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.AssemblyInfoInputs.cache
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.AssemblyInfo.cs
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.csproj.CoreCompileInputs.cache
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.dll
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\refint\15.三数之和.dll
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.pdb
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\15.三数之和.genruntimeconfig.cache
+E:\C#\LeetCode\15.三数之和\obj\Debug\net6.0\ref\15.三数之和.dll
