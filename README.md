@@ -413,6 +413,16 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 其他的这题就没有什么了，另外放下三种语言的排序，总是忘。
 
-* C#：`array.sort(nums)`
-* Go：sort.Ints(nums)
-* Rust：`nums.sort_unstable()`
+* `C#`：`array.sort(nums)`
+* `Go`：`sort.Ints(nums)`
+* `Rust`：`nums.sort_unstable()`
+
+ ## 28.实现strStr()
+
+自己的想法其实还行，看看效率什么的都还好，就是需要注意下在`Rust`中因为`haystack_len`和`needle_len`都是`usize`类型，所以在`for i in 0..=haystack_len - needle_len`之前需要判断大小，其他的就没啥了，放下三种语言取子串的区别：
+
+* `C#`：`haystack.Substring(i, needleLength)`，这里的`needleLength`相当于长度
+* `Go`：`haystack[i:i+needleLen]`，这里相当于一个开闭区间
+* `Rust`：`&haystack[i..(i + needle_len)]`，这里和上面一样，都是一个开闭区间，需要注意下这里已经是`&str`之类的类型的
+
+![](https://s2.loli.net/2022/07/29/fO1z3GIuxkKCsPv.png)
