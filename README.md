@@ -426,3 +426,10 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 * `Rust`：`&haystack[i..(i + needle_len)]`，这里和上面一样，都是一个开闭区间，需要注意下这里已经是`&str`之类的类型的
 
 ![](https://s2.loli.net/2022/07/29/fO1z3GIuxkKCsPv.png)
+
+## 29.两数相除
+
+这题最开始的时候自己当去翻了下书，发现书里面并没有讲通过位运算来实现任意的除法，只有2的幂才可以，所以就想自己去写，后来写的时候就写不出来了，说下官方题解的思路。
+
+1. 先解决那些特殊情况
+2. 如果`dividend>divisor`，那么这时结果是肯定大于1的，然后这个时候判断`dividend`是否大于`2divisor`，如果还大于就接着找，一直将后面的结果变大，如果超出的话，就用`dividend-2ndivisor`再和`divisor`比较，一直重复这个过程即可。
