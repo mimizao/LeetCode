@@ -433,3 +433,96 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 1. 先解决那些特殊情况
 2. 如果`dividend>divisor`，那么这时结果是肯定大于1的，然后这个时候判断`dividend`是否大于`2divisor`，如果还大于就接着找，一直将后面的结果变大，如果超出的话，就用`dividend-2ndivisor`再和`divisor`比较，一直重复这个过程即可。
+
+## 30.串联所有单词的子串
+
+这题对自己还是有点难度的，并没有做出来，自己做的时候想的是直接得出`words`的所有组合，然后再依次的去比较，但是也没有写出来，当然这种方法的复杂度也是非常高的，下面说下自己对于官方题解的理解。
+
+首先放下官方题解的全部内容，理解过程中花了时间的部分在代码中标注：
+
+记 `words` 的长度为 `wordsLen`，`words` 中每个单词的长度为 `wordLen`，`s`的长度为`sLen`。首先需要将`s`划分为单词组，每个单词的大小均为`wordLen`（首尾除外）(虽然我说了有难以理解的地方在下面写，但是官方的这里真的写的很难理解，感觉把这句去掉更容易理解)。这样的划分方法有`wordLen`种，即先删去前`i(i=0~wordLen-1)`个字母后，将剩下的字母进行划分，如果末尾有不到`wordLen`个字母也删去。对这`wordLen`种划分得到的单词数组分别使用滑动窗口对`words`进行类似于「字母异位词」的搜寻。
+
+划分成单词组后，一个窗口包含`sLen`中前`wordsLen`个单词，用一个哈希表`differ`表示窗口中单词频次和`words`中单词频次之差。初始化`differ`时，出现在窗口中的单词，每出现一次，相应的值增加`1`，出现在`words`中的单词，每出现一次，相应的值减少`1`。然后将窗口右移，右侧会加入一个单词，左侧会移出一个单词，并对`differ`做相应的更新。窗口移动时，若出现`differ`中值不为`0`的键的数量为`0`，则表示这个窗口中的单词频次和`words`中单词频次相同，窗口的左端点是一个待求的起始位置。划分的方法有`wordLen`种，做`wordLen`次滑动窗口后，即可找到所有的起始位置。
+
+```c#
+    public IList<int> FindSubstring(string s, string[] words)
+    {
+        int sLen = s.Length;
+        int wordsLen = words.Length;
+        int wordLen = words[0].Length;
+        IList<int> result = new List<int>();
+        // 为什么这里是i<wordLen就可以了，是因为下面采用了滑动窗口，所有最初的起点只有0..wordLen-1这些位置就可以了
+        // 因为这个原因，所以下面的start每次递增都是wordLen
+        for (int i = 0; i < wordLen && i + wordsLen * wordLen <= sLen; i++)
+        {
+            // differ的作用，differ记录的是滑动窗口和words中每个单词出现的频次差，如果当前的滑动窗口和words中的频次差都为0
+            // 那么当前的滑动窗口就是满足条件的，将这个窗口的起点位置记录即可
+            Dictionary<string, int> differ = new Dictionary<string, int>();
+            // 这里是先确定一个起点为i，大小为wordsLen*wordLen的滑动窗口，并将s中i~i+wordsLen*wordLen的内容都放进differ
+            for (int j = 0; j < wordsLen; j++)
+            {
+                string word = s.Substring(i + j * wordLen, wordLen);
+                if (!differ.ContainsKey(word))
+                {
+                    differ.Add(word, 0);
+                }
+                differ[word]++;
+            }
+            // 上一步已经将s中的内容放进去了，我们就可以比对和words中的差别了，如果有的就将这个减1即可
+            foreach (string word in words)
+            {
+                if (!differ.ContainsKey(word))
+                {
+                    differ.Add(word, 0);
+                }
+                differ[word]--;
+                if (differ[word] == 0)
+                {
+                    differ.Remove(word);
+                }
+            }
+            // 这里开始滑动这个窗口，每次滑动的步长都是wordLen
+            for (int start = i; start < sLen - wordsLen * wordLen + 1; start += wordLen)
+            {
+                // 因为start是从i开始的，所以这里要排除一下，其实可以再遍历了words之后就先判断i位置是否满足条件的
+                if (start != i)
+                {
+                    // 窗口右滑的时候，右边新进入一个单词，把这个单词加入滑动窗口的differ中
+                    // 注意这里是start+(wordsLen-1)*wordLen，并不是start+wordsLen*wordLen
+                    // 因为这个时候start已经是i+wordLen了，即start已经不是原滑动窗口的下标了
+                    // 而是新的滑动窗口的下标
+                    string word = s.Substring(start + (wordsLen - 1) * wordLen, wordLen);
+                    if (!differ.ContainsKey(word))
+                    {
+                        differ.Add(word, 0);
+                    }
+                    differ[word]++;
+                    if (differ[word] == 0)
+                    {
+                        differ.Remove(word);
+                    }
+                    // 窗口右滑的时候，左边要出去一个单词，将这个单词从differ中去除
+                    // 这里的start-wordLen和上面同理，start是新的滑动窗口的下标
+                    word = s.Substring(start - wordLen, wordLen);
+                    if (!differ.ContainsKey(word))
+                    {
+                        differ.Add(word, 0);
+                    }
+                    differ[word]--;
+                    if (differ[word] == 0)
+                    {
+                        differ.Remove(word);
+                    }
+                }
+                // 如果这个滑动窗口中所有的都没有差异，那么这个滑动窗口的开始下标就是答案之一
+                if (differ.Count == 0)
+                {
+                    result.Add(start);
+                }
+            }
+        }
+        return result;
+    }
+```
+
+ 
