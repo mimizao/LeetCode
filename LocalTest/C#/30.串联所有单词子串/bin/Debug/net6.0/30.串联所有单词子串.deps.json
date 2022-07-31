@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "30.串联所有单词子串/1.0.0": {
+        "runtime": {
+          "30.串联所有单词子串.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "30.串联所有单词子串/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
