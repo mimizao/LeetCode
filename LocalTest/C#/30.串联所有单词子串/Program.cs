@@ -5,11 +5,14 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Data.Common;
 // See https://aka.ms/new-console-template for more information
 
+string s = "barfoothefoobarman";
+string[] words = new string[] { "foo", "bar" };
+IList<int> list = Solution.FindSubstring(s, words);
 Console.WriteLine("Hello, World!");
 
 public class Solution
 {
-    public IList<int> FindSubstring(string s, string[] words)
+    public static IList<int> FindSubstring(string s, string[] words)
     {
         int sLen = s.Length;
         int wordsLen = words.Length;
