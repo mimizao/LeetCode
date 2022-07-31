@@ -525,4 +525,5 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
 ```
 
- 
+ 挖个坑，明天先写Rust版本的题解，看看还掌握多少，另外一定要坚持写Rust，已经重新学几次了。
+
