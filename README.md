@@ -527,3 +527,46 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
  挖个坑，明天先写Rust版本的题解，看看还掌握多少，另外一定要坚持写Rust，已经重新学几次了。
 
+## 31.下一个排列
+
+自己最开始想的是如果后面的序列等于不等于倒序排列的最大值的话就继续往后面排，但是被空间复杂度给限制了，此题只允许用少量常数，关键我还想了很长时间，只能看答案了。
+
+题解中的意思是我从后往前找，找到第一个比前面小的值`left`，然后再从后面往前找，找到第一个比`left`大的值`right`，之后将这两个值对调，那么现在从`left+1`往后的序列就是从大到小排列的，只需要再将后面这些倒序就可以了
+
+**注意：这里的`left`和`right`是我最初的理解，我以为第一个数的坐标肯定在左边，其实并不是，这两个可以是数组中的任意位置**
+
+```rust
+    pub fn next_permutation(nums: &mut Vec<i32>) {
+        let len = nums.len() as i32;
+        let mut left = len - 2;
+        let mut right = len - 1;
+        // 找到left
+        while left >= 0 && nums[left as usize] >= nums[left as usize + 1] {
+            left -= 1;
+        }
+        // 如果找到的left已经太靠前了，已经越界了，说明当前的数组就是所有排列里面最后的一个了
+        if left >= 0 {
+            // 找到right，这里的right就是从后往前找第一个大于left的值
+            // 需要注意这里的right并不一定需要在left的右边
+            while right >= 0 && nums[left as usize] >= nums[right as usize] {
+                right -= 1;
+            }
+            // 经过对调的left之后的数组一定是从大到小排列的
+            // LeetCode的网站上面不支持这种方式，实际是vscode是可以的
+            (nums[left as usize],nums[right as usize]) = (nums[right as usize],nums[left as usize]);
+        }
+        // 注意这里重新排列的起始坐标是left+1，因为正常情况下这里的left已经是原本的right的值对调了
+        // 也就是说最开始的值已经变成原本的下一位，因为left之后的已经是从大到小排列的了，所以倒序即可
+        reverted_nums(nums, left as usize + 1)
+    }
+    
+    pub fn reverted_nums(nums: &mut Vec<i32>, mut left: usize) {
+        let mut right = nums.len() - 1;
+        while left < right {
+            (nums[left as usize],nums[right as usize]) = (nums[right as usize],nums[left as usize]);
+            left += 1;
+            right -= 1;
+        }
+    }
+```
+
