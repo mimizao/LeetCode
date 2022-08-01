@@ -570,3 +570,4 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
 ```
 
+**疑问：我在Rust中通过与或交换两个数的值，结果不知道是否因为在数组中，导致出现了原本不存在的值，所以有点疑惑，下次需要注意下**
