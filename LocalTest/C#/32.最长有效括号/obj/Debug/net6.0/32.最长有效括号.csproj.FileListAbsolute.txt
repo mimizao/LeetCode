@@ -1,0 +1,15 @@
+E:\C#\LeetCode\32.最长有效括号\bin\Debug\net6.0\32.最长有效括号.exe
+E:\C#\LeetCode\32.最长有效括号\bin\Debug\net6.0\32.最长有效括号.deps.json
+E:\C#\LeetCode\32.最长有效括号\bin\Debug\net6.0\32.最长有效括号.runtimeconfig.json
+E:\C#\LeetCode\32.最长有效括号\bin\Debug\net6.0\32.最长有效括号.dll
+E:\C#\LeetCode\32.最长有效括号\bin\Debug\net6.0\32.最长有效括号.pdb
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.csproj.AssemblyReference.cache
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.AssemblyInfoInputs.cache
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.AssemblyInfo.cs
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.csproj.CoreCompileInputs.cache
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.dll
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\refint\32.最长有效括号.dll
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.pdb
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\32.最长有效括号.genruntimeconfig.cache
+E:\C#\LeetCode\32.最长有效括号\obj\Debug\net6.0\ref\32.最长有效括号.dll
