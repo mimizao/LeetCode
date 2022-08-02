@@ -4,13 +4,13 @@ fn main() {
 
 pub fn longest_valid_parentheses(s: String) -> i32 {
     let mut res = 0;
-    let mut dp: Vec<usize> = vec![0; s.len()];
+    let mut dp:Vec<usize> = vec![0;s.len()];
     let s: Vec<char> = s.chars().collect();
     for i in 1..s.len() {
         if s[i] == ')' {
             if s[i - 1] == '(' {
                 if i >= 2 {
-                    dp[i] = dp[i - 2] + 2;
+                    dp[i] = dp[i - 1] + 2;
                 } else {
                     dp[i] = 2;
                 }
