@@ -571,3 +571,45 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 ```
 
 **疑问：我在Rust中通过与或交换两个数的值，结果不知道是否因为在数组中，导致出现了原本不存在的值，所以有点疑惑，下次需要注意下**
+
+## 32.最长有效括号
+
+第一时间想到了动态规划，但是自己刚开始想到是用`dp[left][right]`存放`bool`类型来表示当前的的区间是否满足要求，之后再想办法得到下一个状态，实际是错误的。
+
+官方题解的做法是`dp[index]`来表示截止到当前坐标的满足条件的最大值，之后再判断下一个的状态。
+
+```rust
+    pub fn longest_valid_parentheses(s: String) -> i32 {
+        let mut res = 0;
+        let mut dp:Vec<usize> = vec![0;s.len()];
+        let s: Vec<char> = s.chars().collect();
+        for i in 1..s.len() {
+            // 如果下一个是'('就跳过，肯定不满足
+            if s[i] == ')' {
+                // 如果前一个是'('，说明这两个直接满足了，dp[i]=dp[i-2]+2
+                if s[i - 1] == '(' {
+                    // 需要注意下i<2时数组越界的情况
+                    if i >= 2 {
+                        dp[i] = dp[i - 2] + 2;
+                    } else {
+                        dp[i] = 2;
+                    }
+			  // 如果当前dp[i-1]开始坐标的前面一个是`(`，那么就和现在的这个`)`配对上了
+                } else if i - dp[i - 1] > 0 && s[i - dp[i - 1] - 1] == '(' {
+                    // 考虑下dp[i-1]开始坐标的前面也满足条件，原本因为开始坐标前面的一个`(`导致连续断了，
+                    // 现在这个`(`又dp[i]可以用的了，那么就需要再加上`dp[i-dp[i-1]-2]`了
+                    if i - dp[i - 1] >= 2 {
+                        dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2;
+                    } else {
+                        dp[i] = dp[i - 1] + 2;
+                    }
+                }
+                if dp[i] > res {
+                    res = dp[i];
+                }
+            }
+        }
+        res as i32
+    }
+```
+
