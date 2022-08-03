@@ -655,3 +655,37 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
 ```
 
+## 34.在排序数组中查找元素的第一个和最后一个位置
+
+因为题目已经要求时间复杂度是`O(log n)`所以我直接一个二分法的做，果然哈，很快，一个小时不到三种写法写完，美滋滋
+
+你问我官方的方法是不是更简单，这我就不知道了，因为我直接一个不看
+
+![](https://s2.loli.net/2022/08/03/mDzs1a36jqZBJ2H.png)
+
+```rust
+    pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
+        let mut left: i32 = 0;
+        let mut right: i32 = nums.len() as i32 - 1;
+        while left <= right {
+            let mid = (left + right) / 2;
+            if nums[mid as usize] == target {
+                let mut begin = mid;
+                let mut end = mid;
+                while begin > 0 && nums[begin as usize - 1] == target {
+                    begin -= 1;
+                }
+                while end < nums.len() as i32 - 1 && nums[end as usize + 1] == target {
+                    end += 1;
+                }
+                return vec![begin, end];
+            } else if nums[mid as usize] < target {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return vec![-1, -1];
+    }
+```
+
