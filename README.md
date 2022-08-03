@@ -613,3 +613,45 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
 ```
 
+## 33.搜索旋转排序数组
+
+这题的重点就是每次将数组分开之后都会有一个数组是排序的，一个和原本一样是没有排序好的，然后再看`target`是否在排序好的这个区间里面，如果不在话就在另外一个里面
+
+```rust
+    pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+        let len = nums.len();
+        if len == 1 {
+            if nums[0] == target {
+                return 0;
+            } else {
+                return -1;
+            }
+        }
+        let mut left = 0;
+        let mut right = len - 1;
+        while left <= right {
+            let mid = (left + right) / 2;
+            if nums[mid] == target {
+                return mid as i32;
+            }
+            // 判断mid之前的数组是否是排序好的，如果不是的话就在mid之后
+            if nums[0] <= nums[mid] {
+                // 判断target是否满足mid之前排序好的数组，如果不满足说明在mid后面
+                if nums[0] <= target && target <= nums[mid] {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                // 判断target是否满足mid之后排序好的数组，如果不满足说明在mid前面
+                if nums[mid] <= target && target <= nums[len - 1] {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+        -1
+    }
+```
+
