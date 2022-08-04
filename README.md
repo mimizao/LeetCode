@@ -689,3 +689,8 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
 ```
 
+## 35.有效的数独
+
+自己的解法和官方的差不多，基本都是先横着找再竖着找，然后小方块小方块的找，找到之后判断这个是否符合数独的要求，over。
+
+看了下一题的题目，我估计我要看答案了。
