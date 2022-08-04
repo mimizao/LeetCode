@@ -11,20 +11,13 @@ func main() {
 func isValidSudoku(board [][]byte) bool {
 	bytesCol := make([]byte, 9)
 	bytesRow := make([]byte, 9)
-	for i := 0; i < 9; i++ {
-		for j := 0; j < 9; j++ {
-			bytesCol[j] = board[i][j]
-			bytesRow[j] = board[j][i]
-		}
-		if !isValidBytes(bytesCol) || !isValidBytes(bytesRow) {
-			return false
-		}
-	}
 	bytesSudoku0 := []byte{}
 	bytesSudoku1 := []byte{}
 	bytesSudoku2 := []byte{}
 	for i := 0; i < 9; i++ {
 		for j := 0; j < 9; j++ {
+			bytesCol[j] = board[i][j]
+			bytesRow[j] = board[j][i]
 			if j/3 == 0 {
 				bytesSudoku0 = append(bytesSudoku0, board[i][j])
 			} else if j/3 == 1 {
@@ -32,6 +25,9 @@ func isValidSudoku(board [][]byte) bool {
 			} else {
 				bytesSudoku2 = append(bytesSudoku2, board[i][j])
 			}
+		}
+		if !isValidBytes(bytesCol) || !isValidBytes(bytesRow) {
+			return false
 		}
 		if i%3 == 2 {
 			if !isValidBytes(bytesSudoku0) || !isValidBytes(bytesSudoku1) || !isValidBytes(bytesSudoku2) {
