@@ -689,6 +689,40 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
 ```
 
+## 35.搜索插入位置
+
+也是直接二分，无需多言，附上我的战绩及优美代码，要是所有题都能做这么快就好了。
+
+![](https://s2.loli.net/2022/08/05/qTca2yVoCluUDQZ.png)
+
+```rust
+    pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
+        let mut left = 0;
+        let mut right = nums.len() - 1;
+        while left <= right {
+            if target < nums[left] {
+                return left as i32;
+            } else if target > nums[right] {
+                return right as i32 + 1;
+            } else {
+                let mid = (left + right) / 2;
+                if target < nums[mid] {
+                    right = mid - 1;
+                } else if target > nums[mid] {
+                    left = mid + 1;
+                } else {
+                    return mid as i32;
+                }
+            }
+        }
+        0
+    }
+```
+
+
+
+
+
 ## 36.有效的数独
 
 自己的解法和官方的差不多，基本都是先横着找再竖着找，然后小方块小方块的找，找到之后判断这个是否符合数独的要求，over。
