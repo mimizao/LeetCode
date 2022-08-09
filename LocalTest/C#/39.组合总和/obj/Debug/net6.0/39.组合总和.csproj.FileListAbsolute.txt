@@ -1,0 +1,15 @@
+E:\C#\LeetCode\39.组合总和\bin\Debug\net6.0\39.组合总和.exe
+E:\C#\LeetCode\39.组合总和\bin\Debug\net6.0\39.组合总和.deps.json
+E:\C#\LeetCode\39.组合总和\bin\Debug\net6.0\39.组合总和.runtimeconfig.json
+E:\C#\LeetCode\39.组合总和\bin\Debug\net6.0\39.组合总和.dll
+E:\C#\LeetCode\39.组合总和\bin\Debug\net6.0\39.组合总和.pdb
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.csproj.AssemblyReference.cache
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.AssemblyInfoInputs.cache
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.AssemblyInfo.cs
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.csproj.CoreCompileInputs.cache
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.dll
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\refint\39.组合总和.dll
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.pdb
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\39.组合总和.genruntimeconfig.cache
+E:\C#\LeetCode\39.组合总和\obj\Debug\net6.0\ref\39.组合总和.dll
