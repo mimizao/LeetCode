@@ -735,4 +735,72 @@ func newMergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 这题没有什么需要特别说的，思想基本都差不多，其实都是递归，官方的题解就是没有再写一个方法
 
-另外通过这题知道了有一种方式叫做打表，就是先把所有的答案都写出来
+另外通过这题知道了有一种方式叫做打表，就是先把所有的答案都写出来。
+
+## 39.组合总和
+
+自己的想法是贪心+递归从后往前找，但是这种情况下有导致有些数值被跳过去，下面说下针对官方题解的理解。
+
+这题官方的题解感觉不如网友“liweiwei1419”的清晰，这里说下关于这个题解的理解：
+
+考虑情况`candidates = [2, 3, 6, 7]`，`target=7`：
+
+* 当第一个数字是`2`，如果找到后续的总和为`7-2=5`的所有组合，再在前面加上`2`，就是第一个是`2`的所有满足条件的组合
+* 当第一个数字是`3`，同理找到组合为`7-3=4`的所有组合，再在前面加上`3`，就是第一个数字是`3`的所有满足条件的组合
+
+基于以上的想法，可以画出如下树形图：
+
+![](https://s2.loli.net/2022/08/09/N3r5eFzfvkh9ZV6.png)
+
+说明：
+
+* 以`target=7`为根节点，创建一个分支时做减法；
+* 每一个箭头表示：从父节点的数值减去边上的数值，得到子节点的数值。边的值就是题目中给出的`candidate`数组的每个元素的值；
+* 减到`0`或者负数的时候停止，即：节点`0`和负数节点成为子节点；
+* 所有从根节点到节点`0`的路径（只能从上往下，没有回路）就是题目中要找的一个结果。
+
+这棵树有`4`个子节点的值为`0`，对应的路径是`[2,2,3],[2,3,2],[3,2,2],[7]`，可以看到有重复的了。
+
+思考为什么会产生重复，其实就是因为假如我在以`3`为第一个结果的时候，还添加了`2`，实际上这个已经添加过了。那么为了解决这个问题，包括在之后的不计算顺序的问题的时候，我们可以在搜索的时候按照某种顺序搜索。具体的做法就是：每一次搜索的时候设置下一轮搜索的起点`begin`，如下图：
+
+![](https://s2.loli.net/2022/08/09/L2v6Tl7hPm4eqCk.png)
+
+即：从每一层的第`2`个节点开始，都不能再搜索产生同一层节点已经使用过的`candidate`里的元素，这里放下根据这种思路写的`C#`代码
+
+```c#
+public class Solution
+{
+    public IList<IList<int>> CombinationSum(int[] candidates, int target)
+    {
+        int len = candidates.Length;
+        IList<IList<int>> res = new List<IList<int>>();
+        if (len == 0)
+        {
+            return res;
+        }
+        Stack<int> path = new Stack<int>();
+        dfs(candidates, 0, len, target, path, res);
+        return res;
+    }
+
+    public void dfs(int[] candidates, int begin, int len, int target, Stack<int> path, IList<IList<int>> res)
+    {
+        if (target < 0)
+        {
+            return;
+        }
+        if (target == 0)
+        {
+            res.Add(new List<int>(path));
+            return;
+        }
+        for (int i = begin; i < len; i++)
+        {
+            path.Push(candidates[i]);
+            dfs(candidates, i, len, target - candidates[i], path, res);
+            path.Pop();
+        }
+    }
+}
+```
+
