@@ -8,28 +8,25 @@ package main
 // @lc code=start
 func combinationSum(candidates []int, target int) [][]int {
 	res := [][]int{}
-	candidatesLen := len(candidates)
-	if candidatesLen == 0 {
-		return res
+	comb := []int{}
+	var dfs func(target, index int)
+	dfs = func(target, index int) {
+		if index == len(candidates) {
+			return
+		}
+		if target == 0 {
+			res = append(res, append([]int(nil), comb...))
+			return
+		}
+		dfs(target, index+1)
+		if target-candidates[index] >= 0 {
+			comb = append(comb, candidates[index])
+			dfs(target-candidates[index], index)
+			comb = comb[:len(comb)-1]
+		}
 	}
-	path := []int{}
-	dfs(candidates, 0, candidatesLen, target, path, res)
+	dfs(target, 0)
 	return res
-}
-
-func dfs(candidates []int, begin int, candidatesLen int, target int, path []int, res [][]int) {
-	if target < 0 {
-		return
-	}
-	if target == 0 {
-		res = append(res, path)
-		return
-	}
-	for i := 0; i < candidatesLen; i++ {
-		path = append(path, candidates[i])
-		dfs(candidates, i, candidatesLen, target-candidates[i], path, res)
-		path = path[:len(path)-1]
-	}
 }
 
 // @lc code=end
