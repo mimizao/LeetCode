@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\40.组合总和II\bin\Debug\net6.0\40.组合总和II.exe
+E:\LeetCode\LocalTest\C#\40.组合总和II\bin\Debug\net6.0\40.组合总和II.deps.json
+E:\LeetCode\LocalTest\C#\40.组合总和II\bin\Debug\net6.0\40.组合总和II.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\40.组合总和II\bin\Debug\net6.0\40.组合总和II.dll
+E:\LeetCode\LocalTest\C#\40.组合总和II\bin\Debug\net6.0\40.组合总和II.pdb
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.dll
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\refint\40.组合总和II.dll
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.pdb
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\40.组合总和II.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\40.组合总和II\obj\Debug\net6.0\ref\40.组合总和II.dll
