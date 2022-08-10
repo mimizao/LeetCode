@@ -36,7 +36,7 @@ public class Solution
             {
                 break;
             }
-            if (i>begin && candidates[i] == candidates[i - 1])
+            if (i > begin && candidates[i] == candidates[i - 1])
             {
                 continue;
             }
