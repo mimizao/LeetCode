@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.go": "go",
+        "*.tmpl": "html",
+        "*.json": "json",
+        "vector": "cpp"
+    }
+}
