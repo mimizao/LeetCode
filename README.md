@@ -804,3 +804,53 @@ public class Solution
 }
 ```
 
+## 40.组合总和II
+
+这题和上面一题有一点相似，但是要求不能有重复的组合，通过以下两步就可以做到
+
+```c#
+public class Solution
+{
+    public IList<IList<int>> CombinationSum2(int[] candidates, int target)
+    {
+        int len = candidates.Length;
+        IList<IList<int>> res = new List<IList<int>>();
+        if (len == 0)
+        {
+            return res;
+        }
+        // 首先是这里的需要对这个数组进行排序，为了下一步做准备
+        Array.Sort(candidates);
+        Stack<int> path = new Stack<int>();
+        Dsf2(candidates, 0, len, target, path, res);
+        return res;
+    }
+
+    public void Dsf2(int[] candidates, int begin, int len, int target, Stack<int> path, IList<IList<int>> res)
+    {
+        if (target == 0)
+        {
+            List<int> newPath = new(path);
+            newPath.Sort();
+            res.Add(newPath);
+            return;
+        }
+        for (int i = begin; i < len; i++)
+        {
+            if (target - candidates[i] < 0)
+            {
+                break;
+            }
+            // 这一步的剪枝，就是如果这个数并不是开始的第一个数，并且这个数和前面的那一个相同就说明这个组合是重复的
+            if (i > begin && candidates[i] == candidates[i - 1])
+            {
+                continue;
+            }
+            path.Push(candidates[i]);
+            Dsf2(candidates, i + 1, len, target - candidates[i], path, res);
+            path.Pop();
+        }
+    }
+}
+```
+
