@@ -16,7 +16,7 @@ public:
         {
             if (nums[i] <= 0)
             {
-                nums[i] = len+1;
+                nums[i] = len + 1;
             }
         }
         for (int i = 0; i < len; i++)
