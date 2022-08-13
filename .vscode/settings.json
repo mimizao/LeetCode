@@ -3,6 +3,7 @@
         "*.go": "go",
         "*.tmpl": "html",
         "*.json": "json",
-        "vector": "cpp"
+        "vector": "cpp",
+        "algorithm": "cpp"
     }
 }

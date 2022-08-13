@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\42.接雨水\bin\Debug\net6.0\42.接雨水.exe
+E:\LeetCode\LocalTest\C#\42.接雨水\bin\Debug\net6.0\42.接雨水.deps.json
+E:\LeetCode\LocalTest\C#\42.接雨水\bin\Debug\net6.0\42.接雨水.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\42.接雨水\bin\Debug\net6.0\42.接雨水.dll
+E:\LeetCode\LocalTest\C#\42.接雨水\bin\Debug\net6.0\42.接雨水.pdb
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.dll
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\refint\42.接雨水.dll
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.pdb
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\42.接雨水.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\42.接雨水\obj\Debug\net6.0\ref\42.接雨水.dll
