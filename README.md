@@ -901,3 +901,81 @@ public:
 ```
 
 ![](https://s2.loli.net/2022/08/11/IfbGZBKvedgS41u.jpg)
+
+## 42.接雨水
+
+这题其实自己是做出来的，但是超时了，这里把自己的做法和官方的做法都放一下
+
+```go
+// 自己的做法的中心思想就是一行一行算，然后计算这一行符合条件的值
+func trap(height []int) int {
+	res := 0
+	begin := 0
+	end := len(height) - 1
+	maxDiffer := 0
+	for i := 0; i < len(height); i++ {
+		if height[i] > maxDiffer {
+			maxDiffer = height[i]
+		}
+	}
+
+	for differ := 0; differ < maxDiffer-1; differ++ {
+		begin, end = getNewBeginAndEnd(height, differ, begin, end)
+		lineRes := 0
+		for index := begin + 1; index < end; index++ {
+			if height[index]-differ <= 0 {
+				lineRes++
+			}
+		}
+		res += lineRes
+	}
+	return res
+}
+
+func getNewBeginAndEnd(height []int, differ, oldBegin, oldEnd int) (int, int) {
+	var newBegin, newEnd int
+	for newBegin = oldBegin; newBegin < oldEnd; newBegin++ {
+		if height[newBegin]-differ > 0 {
+			break
+		}
+	}
+	for newEnd = oldEnd; newEnd > oldBegin; newEnd-- {
+		if height[newEnd]-differ > 0 {
+			break
+		}
+	}
+	return newBegin, newEnd
+}
+```
+
+> 官方接法->动态规划(DP)
+
+```c#
+    public int Trap(int[] height)
+    {
+        int res = 0;
+        int len = height.Length;
+        if (len == 0) return 0;
+        // leftMax表示当前坐标的左边的最大值
+        int[] leftMax = new int[len];
+        leftMax[0] = height[0];
+        for (int i = 1; i < len; i++)
+        {
+            leftMax[i] = Math.Max(leftMax[i-1],height[i]);
+        }
+        int[] rightMax = new int[len];
+        // rightMax表示当前坐标右边的最大值
+        rightMax[len - 1] = height[len - 1];
+        for (int i = len - 2; i >= 0; i--)
+        {
+            rightMax[i] = Math.Max(rightMax[i+1],height[i]);
+        }
+        for (int i = 0; i < len; i++)
+        {
+            // leftMax[i]和right[i]的较小值减去当前坐标值就是当前坐标能盛放的雨水
+            res += Math.Min(leftMax[i],rightMax[i]) - height[i];
+        }
+        return res;
+    }
+```
+
