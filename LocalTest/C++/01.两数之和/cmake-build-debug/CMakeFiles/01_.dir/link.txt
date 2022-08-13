@@ -1,3 +1,0 @@
-"D:\Jetbrains\CLion\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\01_.dir/objects.a
-"D:\Jetbrains\CLion\CLion 2022.2\bin\mingw\bin\ar.exe" qc CMakeFiles\01_.dir/objects.a @CMakeFiles\01_.dir\objects1.rsp
-"D:\Jetbrains\CLion\CLion 2022.2\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\01_.dir/objects.a -Wl,--no-whole-archive -o 01_.exe -Wl,--out-implib,lib01_.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\01_.dir\linklibs.rsp
