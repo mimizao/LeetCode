@@ -1076,3 +1076,40 @@ class Solution {
 }
 ```
 
+## 44.字符串匹配
+
+这题和前面一个匹配其实差不多，都是直接用动态规划的方法就可以了。当然了，我还是没有做出来
+
+```rust
+impl Solution {
+    pub fn is_match(s: String, p: String) -> bool {
+        let s = s.chars().collect::<Vec<char>>();
+        let p = p.chars().collect::<Vec<char>>();
+        let (len_s, len_p) = (s.len(), p.len());
+        let mut dp = vec![vec![false; len_p + 1]; len_s + 1];
+        dp[0][0] = true;
+   		// 因为*是可以直接舍弃的，所以无论p前面有多少个*，dp[0][i]都是true
+        for i in 1..=len_p {
+            if p[i - 1] == '*' {
+                dp[0][i] = true;
+            } else {
+                break;
+            }
+        }
+
+        for i in 1..=len_s {
+            for j in 1..=len_p {
+                // 这里的*，如果不使用*的话，那么dp[i][j]=dp[i][j-1]
+                // 如果使用*的话，那么dp[i][j]=dp[i-1][j]
+                if p[j - 1] == '*' {
+                    dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
+                } else if p[j - 1] == '?' || s[i - 1] == p[j - 1] {
+                    dp[i][j] = dp[i - 1][j - 1];
+                }
+            }
+        }
+        dp[len_s][len_p]
+    }
+}
+```
+
