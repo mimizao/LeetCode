@@ -979,3 +979,100 @@ func getNewBeginAndEnd(height []int, differ, oldBegin, oldEnd int) (int, int) {
     }
 ```
 
+## 43.字符串相乘
+
+自己也写了一版，但是会有`i32`越界的问题，这里说下官方的两种解法
+
+**第一种，模拟乘法的过程**
+
+这种方法其实就是用第一个字符串依次倒叙乘以第二个的数，然后再实现一个字符串的加法
+
+```go
+func multiply(num1 string, num2 string) string {
+	if num1 == "0" || num2 == "0" {
+		return "0"
+	}
+	res := "0"
+	len1, len2 := len(num1), len(num2)
+	for i := len2 - 1; i >= 0; i-- {
+		curr := ""
+		add := 0
+		for j := len2 - 1; j > i; j-- {
+			curr += "0"
+		}
+		y := int(num2[i] - '0')
+		for j := len1 - 1; j >= 0; j-- {
+			x := int(num1[j] - '0')
+			product := x*y + add
+			curr = strconv.Itoa(product%10) + curr
+			add = product / 10
+		}
+		for ; add != 0; add /= 10 {
+			curr = strconv.Itoa(add%10) + curr
+		}
+		res = addStrings(res, curr)
+	}
+	return res
+}
+
+func addStrings(num1 string, num2 string) string {
+	index1, index2 := len(num1)-1, len(num2)-1
+	add := 0
+	res := ""
+	for ; index1 >= 0 || index2 >= 0 || add != 0; index1, index2 = index1-1, index2-1 {
+		x, y := 0, 0
+		if index1 >= 0 {
+			x = int(num1[index1] - '0')
+		}
+		if index2 >= 0 {
+			y = int(num2[index2] - '0')
+		}
+		tempRes := x + y + add
+		res = strconv.Itoa(tempRes%10) + res
+		add = tempRes / 10
+	}
+	return res
+}
+```
+
+**第二种，其实也是乘法的过程**
+
+这种方法是：
+
+1. 先用一个`len1+len2`的数组来盛放所有的内容，为什么是`len1+len2`是因为一个`len1` 的数组乘以一个`len2`的数组的新答案肯定小于等于`len1+len2`，
+2. 将`num1[i]*num2[j]`的数字相乘放在新数组的`i+j+1`这个位置，至于为什么是这个位置需要好好的观察一下
+3. 之后将新数组的按照十进制的方式整理下即可，注意这里最前面可能是`0`,记得舍弃掉
+
+```java
+class Solution {
+    public String multiply(String num1, String num2) {
+        if (num1.equals("0") || num2.equals("0")) {
+            return "0";
+        }
+        StringBuilder res = new StringBuilder();
+        int len1 = num1.length();
+        int len2 = num2.length();
+        int[] resArr = new int[len1 + len2];
+
+        for (int i = len1 - 1; i >= 0; i--) {
+            int x = num1.charAt(i) - '0';
+            for (int j = len2 - 1; j >= 0; j--) {
+                int y = num2.charAt(j) - '0';
+                resArr[i + j + 1] += x * y;
+            }
+        }
+
+        for (int i = len1 + len2 - 1; i > 0; i--) {
+            resArr[i - 1] += resArr[i] / 10;
+            resArr[i] %= 10;
+        }
+
+        int begin = resArr[0] == 0 ? 1 : 0;
+        for (int i = begin; i < len1 + len2; i++) {
+            res.append(resArr[i]);
+        }
+        return res.toString();
+    }
+}
+```
+
