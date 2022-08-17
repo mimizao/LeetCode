@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\46.全排列\bin\Debug\net6.0\46.全排列.exe
+E:\LeetCode\LocalTest\C#\46.全排列\bin\Debug\net6.0\46.全排列.deps.json
+E:\LeetCode\LocalTest\C#\46.全排列\bin\Debug\net6.0\46.全排列.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\46.全排列\bin\Debug\net6.0\46.全排列.dll
+E:\LeetCode\LocalTest\C#\46.全排列\bin\Debug\net6.0\46.全排列.pdb
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.dll
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\refint\46.全排列.dll
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.pdb
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\46.全排列.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\46.全排列\obj\Debug\net6.0\ref\46.全排列.dll
