@@ -21,7 +21,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a6b1a2b-c7e1-489e-9043-143067910b42" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C#/46.全排列/obj/46.全排列.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../C#/46.全排列/obj/46.全排列.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C#/46.全排列/obj/46.全排列.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../../C#/46.全排列/obj/46.全排列.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C#/46.全排列/obj/Debug/net6.0/46.全排列.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../C#/46.全排列/obj/Debug/net6.0/46.全排列.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C#/46.全排列/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../C#/46.全排列/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C#/46.全排列/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../C#/46.全排列/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C#/46.全排列/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../C#/46.全排列/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,22 +56,24 @@
   <component name="ProjectId" id="2DDF3dKPFZKnWIFqFnACDI4upw3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "E:/LeetCode/LocalTest/C++/46permute",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="01_" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="01_" TARGET_NAME="01_" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="01_" RUN_TARGET_NAME="01_">
       <method v="2">
@@ -84,6 +93,7 @@
       <workItem from="1660229595424" duration="33000" />
       <workItem from="1660229908544" duration="70000" />
       <workItem from="1660230432065" duration="18000" />
+      <workItem from="1660753176033" duration="120000" />
     </task>
     <servers />
   </component>

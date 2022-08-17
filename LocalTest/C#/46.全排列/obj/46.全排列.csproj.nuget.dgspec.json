@@ -10,14 +10,15 @@
         "projectUniqueName": "E:\\LeetCode\\LocalTest\\C#\\46.全排列\\46.全排列.csproj",
         "projectName": "46.全排列",
         "projectPath": "E:\\LeetCode\\LocalTest\\C#\\46.全排列\\46.全排列.csproj",
-        "packagesPath": "C:\\Users\\Sven\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\biy.sun\\.nuget\\packages\\",
         "outputPath": "E:\\LeetCode\\LocalTest\\C#\\46.全排列\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Visual Studio\\Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Sven\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\biy.sun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\微服务代码\\lmcp-core-common\\bin\\Debug\\netcoreapp2.2": {},
           "http://lmcp-nuget.lcfuturecenter.com:8081/repository/nuget-group/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
