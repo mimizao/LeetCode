@@ -1265,3 +1265,36 @@ public class Solution
 最前面的`i>0`没有什么好说的，后面的`nums[i]==nums[i-1]`就是判断当前的元素是否和前面一个元素相同，但是这样还不够，我们需要考虑的是同一层的相同值已经被使用的情况。假如`nums=[1,1,2]`，`path[0]=1`，我们并不能简单的将这种情况剪枝，所以就需要判断`used[i-1]`，如果是`true`的情况下就说明第二个`1`处于下一层，也就是可以用，反之如果`used[i-1]=false`的情况下这个数字就不能用了，直接剪枝。
 
 真的挺绕的，继续加油。
+
+## 48.旋转图像
+
+没有什么要说的，就是找到这个位置的数字应该在哪里出现就行了，然后挨个换，需要注意的就是确定`i`和`j`的范围
+
+```java
+class Solution {
+    public void rotate(int[][] matrix) {
+        int len = matrix.length;
+        if (len == 1) {
+            return;
+        }
+        int temp1, temp2, temp3, temp4;
+        // 这里的i不用走完，只要走一半就行了
+        for (int i = 0; i < (len + 1) / 2; i++) {
+            // 这里的j是最开始走多，越到后面走的越少
+            for (int j = i; j < len - i - 1; j++) {
+                temp1 = matrix[i][j];
+                temp2 = matrix[j][len - i - 1];
+                temp3 = matrix[len - i - 1][len - j - 1];
+                temp4 = matrix[len - j - 1][i];
+
+                matrix[i][j] = temp4;
+                matrix[j][len - i - 1] = temp1;
+                matrix[len - i - 1][len - j - 1] = temp2;
+                matrix[len - j - 1][i] = temp3;
+            }
+        }
+        return;
+    }
+}
+```
+
