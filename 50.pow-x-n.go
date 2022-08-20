@@ -12,7 +12,6 @@ func myPow(x float64, n int) float64 {
 	}
 	return 1.0 / quickMul(x, -n)
 }
-
 func quickMul(x float64, n int) float64 {
 	if n == 0 {
 		return 1
