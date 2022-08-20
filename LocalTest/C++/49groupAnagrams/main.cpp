@@ -45,7 +45,7 @@ public:
         return res;
     }
 
-    vector<vector<string>> groupAnagrams(vector<string> &strs) {
+    vector<vector<string>> groupAnagrams2(vector<string> &strs) {
         vector<vector<string>> res;
         int len = strs.size();
         if (len == 1) {
@@ -74,7 +74,7 @@ public:
 int main() {
     Solution solution;
     vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
-    //auto res = solution.groupAnagrams1(strs);
-    auto res = solution.groupAnagrams(strs);
+    auto res1 = solution.groupAnagrams1(strs);
+    auto res2 = solution.groupAnagrams2(strs);
     return 0;
 }
