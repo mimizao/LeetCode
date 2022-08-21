@@ -32,9 +32,6 @@ pub fn my_quick_mul(x: f64, n: i32) -> f64 {
     if n == 1 {
         return x;
     }
-    if n == 2 {
-        return x * x;
-    }
     let mut count = 1;
     let mut res = x;
     while count <= n / 2 {

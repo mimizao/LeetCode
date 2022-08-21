@@ -11,9 +11,9 @@ func main() {
 
 func myPow(x float64, n int) float64 {
 	if n >= 0 {
-		return quickMul(x, n)
+		return myQuickMul(x, n)
 	}
-	return 1.0 / quickMul(x, -n)
+	return 1.0 / myQuickMul(x, -n)
 }
 
 func quickMul(x float64, n int) float64 {
@@ -25,4 +25,21 @@ func quickMul(x float64, n int) float64 {
 		return y * y
 	}
 	return y * y * x
+}
+
+func myQuickMul(x float64, n int) float64 {
+	if n == 0 {
+		return 1.00000
+	}
+	if n == 1 {
+		return x
+	}
+	res := x
+	count := 1
+	for count <= n/2 {
+		res *= res
+		count *= 2
+	}
+	res = res * myQuickMul(x, n-count)
+	return res
 }
