@@ -1371,3 +1371,44 @@ public:
 
 ## 50.$Pow(x,n)$
 
+看到这题的第一时间想到的是那个自己实现除法的问题，其实自己的做法也一样，不过官方题解的大概看起来会更简洁一点，不过我还是更喜欢自己的解法，比较容易理解，这里都放下：
+
+```rust
+pub fn my_pow(x: f64, n: i32) -> f64 {
+    if n >= 0 {
+        return my_quick_mul(x, n);
+    }
+    return 1.00000 / my_quick_mul(x, -n);
+}
+// 官方解法，这种确实自己想不起来，就是在那个为奇数的时候乘以x，确实可以满足所有数
+pub fn quick_mul(x: f64, n: i32) -> f64 {
+    if n == 0 {
+        return 1.00000;
+    }
+    let y = quick_mul(x, n / 2);
+    return if n % 2 == 0 {
+        y * y
+    } else {
+        y * y * x
+    };
+}
+
+// 这里借鉴了除法的那个，每次都找到能满足的最大的，过了之后就再从1开始找
+pub fn my_quick_mul(x: f64, n: i32) -> f64 {
+    if n == 0 {
+        return 1.0000;
+    }
+    if n == 1 {
+        return x;
+    }
+    let mut count = 1;
+    let mut res = x;
+    while count <= n / 2 {
+        res *= res;
+        count *= 2;
+    }
+    res *= my_quick_mul(x, n - count);
+    return res;
+}
+```
+
