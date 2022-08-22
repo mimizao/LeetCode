@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\51.N皇后\bin\Debug\net6.0\51.N皇后.exe
+E:\LeetCode\LocalTest\C#\51.N皇后\bin\Debug\net6.0\51.N皇后.deps.json
+E:\LeetCode\LocalTest\C#\51.N皇后\bin\Debug\net6.0\51.N皇后.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\51.N皇后\bin\Debug\net6.0\51.N皇后.dll
+E:\LeetCode\LocalTest\C#\51.N皇后\bin\Debug\net6.0\51.N皇后.pdb
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.dll
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\refint\51.N皇后.dll
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.pdb
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\51.N皇后.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\51.N皇后\obj\Debug\net6.0\ref\51.N皇后.dll
