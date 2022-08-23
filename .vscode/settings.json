@@ -4,6 +4,9 @@
         "*.tmpl": "html",
         "*.json": "json",
         "vector": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp"
     }
 }
