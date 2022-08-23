@@ -4,6 +4,7 @@ function totalNQueens(n: number): number {
     function dfs(n: number, row: number, col: number, ld: number, rd: number) {
         if (row >= n) {
             res++;
+            return;
         }
         let bits = ~(col | ld | rd) & ((1 << n) - 1);
         while (bits > 0) {
