@@ -1512,3 +1512,36 @@ function totalNQueens(n: number): number {
 }
 ```
 
+## 53.最大子数组和
+
+我们用$f(i)$表示以坐标`i`个结尾的子数组的最大和，**注意，一定是以坐标`i`结尾的子数组的最大和，而不是截止到坐标`i`子数组的最大和**，这样我们就不用考虑是否连续的问题了。轻易推出以下方程：
+
+$f(i)=max(f(i-1)+nums[i],nums[i])$，也就是在判断`i`坐标时，如果$f(i-1)<0$，我们就舍弃掉之前的，只取当前坐标值就行了，这样遍历一次我们就可以求得$f(0)...f(len-1)$，然后我们直接返回最大值就可以。
+
+```rust
+impl Solution {
+    pub fn max_sub_array(nums: Vec<i32>) -> i32 {
+        let mut pre = 0;
+        let mut res = nums[0];
+        for v in nums {
+            pre = max(pre + v, v);
+            res = max(res, pre);
+        }
+        res
+    }
+}
+```
+
+加个Python的代码：
+
+```py
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        res = nums[0]
+        pre = 0
+        for v in nums:
+            pre = max(pre + v, v)
+            res = max(res, pre)
+        return res
+```
+
