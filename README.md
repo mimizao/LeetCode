@@ -1548,3 +1548,50 @@ class Solution:
 ## 54.螺旋矩阵
 
 自己的解法和官方解法差不多，都是模拟这个过程，就是我这种解法是计算总共会走多少趟，其实可以稍微推导一下，如果是行较少，那么就是二倍的行数-1，如果是列比较少的就是二倍的列数，其他的就没有什么了。
+
+## 55.跳跃游戏
+
+这个和前面那个计算最少多少步能到最后的节点有点像，都是计算在当前节点的可跳范围内，哪个节点能让自己跳的更远。如果一定会跳到0那里就是失败了。现在有点好奇Python是怎么火起来的，写起来真的难受。
+
+```python
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        index = 0
+        while index + nums[index] < len(nums) - 1:
+            if nums[index] == 0:
+                return False
+            temp = 0
+            newIndex = index + 1
+            for distance in range(1, nums[index] + 1):
+                if nums[index + distance] + distance < temp:
+                    continue
+                temp = nums[index + distance] + distance
+                newIndex = index + distance
+            index = newIndex
+        return True
+```
+
+```c#
+public class Solution
+{
+    public bool CanJump(int[] nums)
+    {
+        int index = 0;
+        while (index + nums[index] < nums.Length - 1)
+        {
+            if (nums[index] == 0) return false;
+            int temp = 0;
+            int newIndex = index + 1;
+            for (var distance = 1; distance <= nums[index]; distance++)
+            {
+                if (nums[index + distance] + distance < temp) continue;
+                temp = nums[index + distance] + distance;
+                newIndex = index + distance;
+            }
+            index = newIndex;
+        }
+        return true;
+    }
+}
+```
+
