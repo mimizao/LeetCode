@@ -1595,3 +1595,51 @@ public class Solution
 }
 ```
 
+## 56.合并区间
+
+本题的思路就是先将前两个区间比较，之后将得到的结果再和第三个比较，这样的话就会出现一个比较麻烦的情况，就是如果这个第三个的`start`和前面两个重叠，这就有点麻烦了，所以我们在最开始将所有的区间按照`start`增的方式排序就可以了。
+
+```java
+public int[][] merge(int[][] intervals) {
+	if (intervals.length == 0) {
+        return new int[0][2];
+	}
+	Arrays.sort(intervals, new Comparator<int[]>() {
+        public int compare(int[] interval1, int[] interval2) {
+            return interval1[0] - interval2[0];
+		}
+	});
+	List<int[]> merged = new ArrayList<>();
+	for (int[] interval : intervals) {
+		int L = interval[0], R = interval[1];
+		if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < L) {
+			merged.add(new int[]{L, R});
+		} else {
+			merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], R);
+		}
+	}
+	return merged.toArray(new int[merged.size()][]);
+}
+```
+
+```c#
+public int[][] Merge(int[][] intervals)
+{
+	var len = intervals.Length;
+	if (len == 1) return intervals;
+	Array.Sort(intervals, (interval1, interval2) => interval1[0] - interval2[0]);
+	var merged = new List<int[]>();
+	foreach (var interval in intervals)
+	{
+		var start = interval[0];
+		var end = interval[1];
+		if (merged.Count == 0 || merged[^1][1] < start)
+			merged.Add(new[] { start, end });
+		else
+			merged[^1][1] = Math.Max(merged[^1][1], end);
+	}
+	return merged.ToArray();
+}
+```
+
+C#代码是在太优雅了。
