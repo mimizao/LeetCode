@@ -3,16 +3,19 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4949af09-cef6-4c7f-b648-c402ab9ac612" name="变更" comment="" />
+    <list default="true" id="4949af09-cef6-4c7f-b648-c402ab9ac612" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +39,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "last_opened_file_path": "E:/LeetCode/LocalTest/Rust/53.最大子数组和/max_sub_array",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -48,6 +52,8 @@
       <option name="presentableId" value="Default" />
       <updated>1661167655916</updated>
       <workItem from="1661167657050" duration="42000" />
+      <workItem from="1661420862388" duration="48000" />
+      <workItem from="1661582750706" duration="39000" />
     </task>
     <servers />
   </component>
