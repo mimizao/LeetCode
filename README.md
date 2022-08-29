@@ -1647,3 +1647,21 @@ C#代码是在太优雅了。
 ## 57.插入区间
 
 参考上面一题，如果已经是按照左区间排序好的就非常简单的，自己的写法有点复杂，但是问题不大，都是分为三部分，一个是可以直接插入到左边的，然后是需要处理的相交的部分，然后是可以直接插入到右边的。
+
+## 58.最后一个单词的长度
+
+简单题没有什么好说的，从后往前找就可以了
+
+```python
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        index = len(s)-1
+        while s[index] == ' ':
+            index -= 1
+        res = 0
+        while index >= 0 and s[index] != ' ':
+            index -= 1
+            res += 1
+        return res
+```
+
