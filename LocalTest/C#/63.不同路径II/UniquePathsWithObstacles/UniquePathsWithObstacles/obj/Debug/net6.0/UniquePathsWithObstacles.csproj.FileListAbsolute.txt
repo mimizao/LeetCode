@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\bin\Debug\net6.0\UniquePathsWithObstacles.exe
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\bin\Debug\net6.0\UniquePathsWithObstacles.deps.json
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\bin\Debug\net6.0\UniquePathsWithObstacles.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\bin\Debug\net6.0\UniquePathsWithObstacles.dll
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\bin\Debug\net6.0\UniquePathsWithObstacles.pdb
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.dll
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\refint\UniquePathsWithObstacles.dll
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.pdb
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\UniquePathsWithObstacles.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\63.不同路径II\UniquePathsWithObstacles\UniquePathsWithObstacles\obj\Debug\net6.0\ref\UniquePathsWithObstacles.dll
