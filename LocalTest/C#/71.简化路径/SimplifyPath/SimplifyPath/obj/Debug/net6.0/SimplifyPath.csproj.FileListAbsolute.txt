@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\bin\Debug\net6.0\SimplifyPath.exe
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\bin\Debug\net6.0\SimplifyPath.deps.json
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\bin\Debug\net6.0\SimplifyPath.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\bin\Debug\net6.0\SimplifyPath.dll
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\bin\Debug\net6.0\SimplifyPath.pdb
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.dll
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\refint\SimplifyPath.dll
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.pdb
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\SimplifyPath.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\71.简化路径\SimplifyPath\SimplifyPath\obj\Debug\net6.0\ref\SimplifyPath.dll
