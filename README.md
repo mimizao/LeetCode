@@ -1801,3 +1801,45 @@ public class Solution
 ## 71.简化路径
 
 就是区分一些特殊情况，用一个栈就解决了。
+
+## 72.编辑距离
+
+首先看到这个题目用DP没有什么问题，就是如何设计状态转移方程比较难。
+
+这里用`dp[i][j]`表示`word1`的前`i`位与`word2`的前`j`所需要的编辑距离，那么最开始的边界就是另外一个长度，也就是那两个`for`循环。
+
+然后就是如何根据目前的值推导出下一个，需要把三种都列出来然后取其中最小的一个，还要注意从`dp[i-1][j-1]`推导的时候，如果新增的`i`和`j`这两个`char`是相等的，那么就不变，如果变了就+1。
+
+```rust
+impl Solution {
+    pub fn min_distance(word1: String, word2: String) -> i32 {
+        let word1: Vec<char> = word1.chars().collect();
+        let word2: Vec<char> = word2.chars().collect();
+        let len1 = word1.len();
+        let len2 = word2.len();
+        if len1 == 0 || len2 == 0 {
+            return max(len1 as i32, len2 as i32);
+        }
+        let mut dp = vec![vec![0; len2 + 1]; len1 + 1];
+        for i in 0..=len1 {
+            dp[i][0] = i as i32;
+        }
+        for i in 0..=len2 {
+            dp[0][i] = i as i32;
+        }
+        for i in 1..=len1 {
+            for j in 1..=len2 {
+                let left = dp[i - 1][j] + 1;
+                let down = dp[i][j - 1] + 1;
+                let mut left_down = dp[i - 1][j - 1];
+                if word1[i - 1] != word2[j - 1] {
+                    left_down += 1;
+                }
+                dp[i][j] = min(left, min(down, left_down));
+            }
+        }
+        dp[len1][len2]
+    }
+}
+```
+
