@@ -1854,3 +1854,133 @@ impl Solution {
 ## 75.颜色分类
 
 因为这个固定只有1、2、3这三个数字，所以我可以碰到1就往前放，碰到3就往后放，2不用动，同时记录下放的位置，这样一次遍历就解决了。
+
+## 76.最小覆盖子串
+
+这题还是比较有意思的，自己也做出来了，和官方的也差不多，都是用滑动窗口。
+
+自己的做法是只维护一个哈希，这个哈希表示字符串中还没有被匹配的情况，但是这种每次都要判断这个有没有匹配成功，应该是这一步比较耗时。
+
+官方的做法是维护两个哈希，同时用一个单独的int类型来记录这个的匹配情况，应该是这一点比我的省时间。
+
+```c#
+public class Solution
+{
+    public string MinWindow(string s, string t)
+    {
+        int sLen = s.Length;
+        int tLen = t.Length;
+        if (sLen < tLen) return "";
+        Dictionary<char, int> tDic = new();
+        foreach (char c in t)
+            if (!tDic.ContainsKey(c))
+                tDic[c] = 1;
+            else
+                tDic[c]++;
+
+        for (int i = 0; i < tLen; i++)
+        {
+            if (!tDic.ContainsKey(s[i])) continue;
+
+            tDic[s[i]]--;
+        }
+
+        if (!tDic.Values.Any(v => v > 0)) return s[..tLen];
+
+        int tempBegin = 0;
+        int tempEnd = tLen - 1;
+        int begin = -1;
+        int end = sLen;
+
+        while (tempBegin < sLen - tLen + 1 && tempEnd < sLen)
+        {
+            while (tempEnd - tempEnd > end - begin && tempBegin < sLen - tLen + 1 && tempEnd < sLen)
+            {
+                if (tDic.ContainsKey(s[tempBegin]))
+                {
+                    tDic[s[tempBegin]]++;
+                }
+
+                tempBegin++;
+            }
+
+            if (!tDic.Values.Any(v => v > 0))
+            {
+                if (tempEnd - tempBegin + 1 == tLen)
+                {
+                    return s.Substring(tempBegin, tempEnd - tempBegin + 1);
+                }
+
+                if (tempEnd - tempBegin < end - begin)
+                {
+                    begin = tempBegin;
+                    end = tempEnd;
+                }
+
+                if (tDic.ContainsKey(s[tempBegin]))
+                {
+                    tDic[s[tempBegin]]++;
+                }
+
+                tempBegin++;
+            }
+            else
+            {
+                if (tempEnd < sLen - 1)
+                {
+                    tempEnd++;
+                    if (tDic.ContainsKey(s[tempEnd]))
+                    {
+                        tDic[s[tempEnd]]--;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        return begin is -1 ? "" : s.Substring(begin, end - begin + 1);
+    }
+
+    public string MinWindow1(string s, string t)
+    {
+        int sLen = s.Length;
+        int tLen = t.Length;
+        if (sLen < tLen)
+        {
+            return "";
+        }
+        Dictionary<char, int> sDic = new();
+        Dictionary<char, int> tDic = new();
+        foreach (char c in t)
+        {
+            tDic[c] = tDic.ContainsKey(c) ? tDic[c] + 1 : 1;
+        }
+        int count = 0;
+        int start = 0;
+        int len = int.MaxValue;
+        for (int tempStart = 0, tempEnd = 0; tempEnd < sLen; tempEnd++)
+        {
+            sDic[s[tempEnd]] = sDic.ContainsKey(s[tempEnd]) ? sDic[s[tempEnd]] + 1 : 1;
+            if (tDic.ContainsKey(s[tempEnd]) && sDic[s[tempEnd]] <= tDic[s[tempEnd]])
+            {
+                count++;
+            }
+            while (tempStart < tempEnd && (!tDic.ContainsKey(s[tempStart]) || sDic[s[tempStart]] > tDic[s[tempStart]]))
+            {
+                sDic[s[tempStart]]--;
+                tempStart++;
+            }
+            // ReSharper disable once InvertIf
+            if (count == tLen && tempEnd - tempStart + 1 < len)
+            {
+                start = tempStart;
+                len = tempEnd - tempStart + 1;
+            }
+        }
+        return len is int.MaxValue ? "" : s.Substring(start, len);
+    }
+}
+```
+
