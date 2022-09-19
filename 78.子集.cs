@@ -13,7 +13,6 @@ public class Solution
         IList<IList<int>> res = new List<IList<int>>();
         IList<IList<int>> temp = new List<IList<int>>();
         res.Add(new List<int>());
-        temp.Add(new List<int>());
         for (int i = 1; i <= len; i++)
         {
             bool[] used = new bool[len];
