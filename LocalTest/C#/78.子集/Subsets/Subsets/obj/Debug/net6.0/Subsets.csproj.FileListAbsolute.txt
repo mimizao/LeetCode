@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\bin\Debug\net6.0\Subsets.exe
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\bin\Debug\net6.0\Subsets.deps.json
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\bin\Debug\net6.0\Subsets.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\bin\Debug\net6.0\Subsets.dll
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\bin\Debug\net6.0\Subsets.pdb
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.dll
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\refint\Subsets.dll
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.pdb
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\Subsets.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\78.子集\Subsets\Subsets\obj\Debug\net6.0\ref\Subsets.dll
