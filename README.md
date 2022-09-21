@@ -1995,3 +1995,53 @@ public class Solution
 ## 79.单词搜索
 
 这题我的思路是先找到入口，然后通过这个入口进去之后在判断他的四周是否满足下一个字母，如果满足的话就再进入下一层，这个过程中需要注意标记使用情况。
+
+## 80.删除有序数组中的重复项II
+
+这题我的做法就是判断如果有数连续出现的次数大于2之后就把后面的数复制过来，不过这样其实复杂度挺高的，因为后面其实并不是所有的都需要复制过来的，更简单的做法应该是在复制的时候判断时候有连续出现大于2的数，如果有的话就跳过后续这些大于2的数，接着从这个后面复制，只是说下思路，以后闲的时候想优化的话可以尝试下。
+
+```rust
+impl Solution {
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+        let len = nums.len();
+        if len <= 2 {
+            return len as i32;
+        }
+        let mut index = len;
+        let mut count = 1;
+        let mut num = nums[0];
+        let mut i = 1;
+        while i < index {
+            if nums[i] == num {
+                if count < 2 {
+                    count += 1;
+                    i += 1;
+                } else {
+                    let mut temp_index = i;
+                    // 就是这里，其实并不用一直找到结尾的，而是应该判断后续的数有没有出现大于2的，如果有的话就把后续的数跳过的，这样会少复制些东西，就是判断会比较复杂，但是最终的时间复杂度会小一些。
+                    while temp_index < index && nums[temp_index] == num {
+                        temp_index += 1;
+                    }
+                    for j in 0..len - temp_index {
+                        nums[i + j] = nums[temp_index + j];
+                    }
+                    index = i + index - temp_index;
+                    if i + 1 < index {
+                        num = nums[i];
+                    } else {
+                        return index as i32;
+                    }
+                    count = 1;
+                    i += 1;
+                }
+            } else {
+                num = nums[i];
+                count = 1;
+                i += 1;
+            }
+        }
+        index as i32
+    }
+}
+```
+
