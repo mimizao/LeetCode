@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ze9eon0Atvg5VUB/dfCCuHM6UwbYBZsGoqcE1KFotlagrIck3jsuIrEXqdh0t1wgn48loZk2Z/iETWsmDr/KzA==",
+  "success": true,
+  "projectFilePath": "E:\\LeetCode\\LocalTest\\C#\\81. 搜索旋转排序数组II\\Search\\Search\\Search.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://lmcp-nuget.lcfuturecenter.com:8081/repository/nuget-group/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
