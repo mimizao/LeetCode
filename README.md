@@ -2059,3 +2059,31 @@ impl Solution {
             }
 ```
 
+## 82.删除排序链表中的重复元素II
+
+这题的有个难点如果上来就重复的话不是很好处理，这种呢就是需要在前面加一个临时节点，这样最终在返回的时候就返回临时节点的下一个节点即可。
+
+```go
+func deleteDuplicates(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	pre := &ListNode{
+		Val:  0,
+		Next: head,
+	}
+	cur := pre
+	for cur.Next != nil && cur.Next.Next != nil {
+		if cur.Next.Val == cur.Next.Next.Val {
+			curNextVal := cur.Next.Val
+			for cur.Next != nil && cur.Next.Val == curNextVal {
+				cur.Next = cur.Next.Next
+			}
+		} else {
+			cur = cur.Next
+		}
+	}
+	return pre.Next
+}
+```
+
