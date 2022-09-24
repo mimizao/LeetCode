@@ -2087,3 +2087,6 @@ func deleteDuplicates(head *ListNode) *ListNode {
 }
 ```
 
+## 83. 删除排序链表中的重复元素
+
+简单题没有什么好说的了。
