@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "azKzlOSX11nv7/PuETi393cNQS1vWYoEoz7q5+9yDPDTm8leszBoKcordGTXAP5GTbx3BoAuJ7rP84voF6qhjQ==",
+  "success": true,
+  "projectFilePath": "E:\\LeetCode\\LocalTest\\C#\\83. 删除排序链表中的重复元素\\DeleteDuplicates\\DeleteDuplicates\\DeleteDuplicates.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://lmcp-nuget.lcfuturecenter.com:8081/repository/nuget-group/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
