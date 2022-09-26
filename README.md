@@ -2090,3 +2090,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 ## 83. 删除排序链表中的重复元素
 
 简单题没有什么好说的了。
+
+## 84.柱状图中最大的矩形
+
+说实话，没有做出来，CV大法，今天太忙，明天写题解。
