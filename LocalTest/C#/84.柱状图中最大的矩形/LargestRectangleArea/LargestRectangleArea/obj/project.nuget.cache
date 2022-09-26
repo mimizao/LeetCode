@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ouYW/fGaGdCilnnhfGKpeaJebSXQ3D5imTfzoJ/y3l+Bh4+mkN6ANU9Zag+uIY52LkSe96vIPH8X3H2vsRQ19Q==",
+  "success": true,
+  "projectFilePath": "E:\\LeetCode\\LocalTest\\C#\\84.柱状图中最大的矩形\\LargestRectangleArea\\LargestRectangleArea\\LargestRectangleArea.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://lmcp-nuget.lcfuturecenter.com:8081/repository/nuget-group/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

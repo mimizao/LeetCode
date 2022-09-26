@@ -1,0 +1,15 @@
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\bin\Debug\net6.0\LargestRectangleArea.exe
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\bin\Debug\net6.0\LargestRectangleArea.deps.json
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\bin\Debug\net6.0\LargestRectangleArea.runtimeconfig.json
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\bin\Debug\net6.0\LargestRectangleArea.dll
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\bin\Debug\net6.0\LargestRectangleArea.pdb
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.csproj.AssemblyReference.cache
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.GeneratedMSBuildEditorConfig.editorconfig
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.AssemblyInfoInputs.cache
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.AssemblyInfo.cs
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.csproj.CoreCompileInputs.cache
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.dll
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\refint\LargestRectangleArea.dll
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.pdb
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\LargestRectangleArea.genruntimeconfig.cache
+E:\LeetCode\LocalTest\C#\84.柱状图中最大的矩形\LargestRectangleArea\LargestRectangleArea\obj\Debug\net6.0\ref\LargestRectangleArea.dll
