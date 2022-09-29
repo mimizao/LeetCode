@@ -2104,3 +2104,48 @@ func deleteDuplicates(head *ListNode) *ListNode {
 这题就是就是设定一个左起点，一个右起点，之后依次往后面塞数就可以了。
 
 需要注意的就是如果全部都在左边或者全部都在右边的特殊情况。
+
+## 87.扰乱字符串
+
+可以用一个四维数组`dp[i][j][k][l]`表示`s1[i..j]`和`s2[k..l]`是否可以相互转换，但是因为必须长度相同才能转换，所以可以简化成`dp[i][j][len]`表示从`s1[i]`和`s2[j]`开始长度为`len`是否可以相互转换。
+
+```c++
+class Solution {
+public:
+    bool isScramble(string s1, string s2) {
+        auto n = s1.length();
+        auto m = s2.length();
+        if (n != m) {
+            return false;
+        }
+        vector<vector<vector<bool>>> dp(n, vector<vector<bool>>(n, vector<bool>(n + 1, false)));
+        // 初始化，就是长度为1的时候
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                dp[i][j][1] = s1[i] == s2[j];
+            }
+        }
+        // 这里的两个为true的条件判断不好理解，第一种就是不对调的，第二种是对调的
+        for (int len = 2; len <= n; len++) {
+            for (int i = 0; i <= n - len; i++) {
+                for (int j = 0; j <= n - len; j++) {
+                    for (int k = 1; k <= len - 1; k++) {
+                        // 不对调的
+                        if (dp[i][j][k] && dp[i + k][j + k][len - k]) {
+                            dp[i][j][len] = true;
+                            break;
+                        }
+                        // 对调的
+                        if (dp[i][j + len - k][k] && dp[i + k][j][len - k]) {
+                            dp[i][j][len] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return dp[0][0][n];
+    }
+};
+```
+
