@@ -2364,3 +2364,45 @@ public:
 };
 ```
 
+## 95.不同的二叉搜索树II
+
+二叉树的题目很多可以直接套用递归，这题既然是一个二叉搜索树，那么这个根节点的左右也都是一个二叉搜索树，那么就以这个根节点分别确认左右两边即可。
+
+```c++
+class Solution {
+public:
+    vector<TreeNode *> generateTrees(int n) {
+        if (!n) {
+            return {};
+        }
+        return generateTrees(1, n);
+    }
+
+    vector<TreeNode *> generateTrees(int start, int end) {
+        if (start > end) {
+            return {nullptr};
+        }
+        vector<TreeNode *> allTrees;
+        // 这里是i就是根节点
+        for (int i = start; i <= end; i++) {
+            // 确认左子树
+            vector<TreeNode *> leftTrees = generateTrees(start, i - 1);
+            // 确认右子树
+            vector<TreeNode *> rightTrees = generateTrees(i + 1, end);
+            // 这里是从左子树中选择一棵
+            for (auto &left: leftTrees) {
+                // 这里是从右子树中选择一棵
+                for (auto &right: rightTrees) {
+                    // 这里就是拼接起来即可
+                    TreeNode *currTree = new TreeNode(i);
+                    currTree->left = left;
+                    currTree->right = right;
+                    allTrees.emplace_back(currTree);
+                }
+            }
+        }
+        return allTrees;
+    }
+};
+```
+
