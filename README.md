@@ -2406,3 +2406,25 @@ public:
 };
 ```
 
+## 96.不同的二叉搜索树
+
+最笨的方法肯定是将上面的一个求出来再取数，但是这里可以直接用DP
+
+```c++
+class Solution {
+public:
+    int numTrees(int n) {
+        std::vector<int> dp(n + 1, 0);
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; ++i) {
+            for (int j = 1; j <= i; ++j) {
+                dp[i] += dp[j - 1] * dp[i - j];
+            }
+        }
+        return dp[n];
+    }
+};
+```
+
