@@ -1,0 +1,1 @@
+"D:\Jetbrains\CLion\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Jetbrains/CLion/CLion 2022.2/bin/ninja/win/ninja.exe" -G Ninja -S E:\LeetCode\LocalTest\C++\98.验证二叉树搜索\isValidBST -B E:\LeetCode\LocalTest\C++\98.验证二叉树搜索\isValidBST\cmake-build-debug
