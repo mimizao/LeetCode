@@ -2431,3 +2431,29 @@ public:
 ## 97.交错字符串
 
 一个简单的DP即可，恭贺自己的DP神功小成。
+
+## 98.验证二叉搜索树
+
+递归即可，就是需要注意下这里传入的值其实是左右节点的值，不是当前节点的值，所以判断也是放在下一次递归里面判断的，不是当次递归。
+
+```c++
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        return helper(root,LONG_MIN,LONG_MAX);
+    }
+    bool helper(TreeNode* root,long long lower,long long upper) {
+        if (root == nullptr){
+            return true;
+        }
+        // 这里其实判断的是上一个节点的左右节点。
+        if (root->val <= lower ||root->val>= upper){
+            return false;
+        }
+        return helper(root->left,lower,root->val)&&helper(root->right,root->val,upper);
+    }
+};
+```
+
+
+
